@@ -44,7 +44,10 @@ namespace Savvypro.Controllers
                     string path = Path.Combine(
                                            Server.MapPath("~/Content/Upload"), fileName);
                     file.SaveAs(path);
+                    //return file save success info
+                    Response.StatusCode = (int)HttpStatusCode.OK;
 
+                    
                     //OCR function
                     string ApplicationId = "Lei_test_app";
                     string Password = "WPu1KovrJdN7i37WCuOOppVx";
@@ -52,10 +55,12 @@ namespace Savvypro.Controllers
 
                     OCR oCR = new OCR(ApplicationId, Password, FilePath);
                     string ocrResult = oCR.GetResult(FilePath, "English", "txt");
-
-
+                    
+                    /*
+                    string ocrResult = "test";
                     System.Threading.Thread.Sleep(1000);
-                    return Json(new { success = true, responseText = "Successfully uploaded image file.", ocrResult = ocrResult }, JsonRequestBehavior.AllowGet);
+                    */
+                    return Json(new { success = true, responseText = "Successfully extracted text from image.", ocrResult = ocrResult }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {

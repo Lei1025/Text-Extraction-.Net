@@ -116,7 +116,6 @@ namespace Savvypro
                 }
             }
 
-            responseString = responseString.Length == 0 ? "Sorry, no result for this images" : responseString;
             return responseString;         
         }
         /// <summary>
@@ -130,7 +129,7 @@ namespace Savvypro
             request.Method = method;
             request.Proxy = proxy;
 
-            //encode id and password into head
+            //encode id and password into head by Lei
             request.Headers.Add("Authorization", "Basic " + EncodedAuth);
 
             return request;
