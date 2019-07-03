@@ -1,4 +1,4 @@
-# Text-Extraction-Web
+# Text Extraction Web Application
 An web application that can extract text of an image uploaded by users
 
 ![](https://raw.githubusercontent.com/Lei1025/ImgRepo/master/myblog/c92d40a4-dff3-07d7-7278-f1d6b024cb2d.png)
